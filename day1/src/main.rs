@@ -32,7 +32,9 @@ fn parse_sorted_lists(input: &str) -> (Vec<usize>, Vec<usize>) {
     let (mut a, mut b): (Vec<usize>, Vec<usize>) = input
         .lines()
         .map(|line| line.split_once("   ").unwrap())
-        .map(|(a, b)| (usize::from_str(a).unwrap(), usize::from_str(b).unwrap()))
+        .map(|(a, b)| {
+            (usize::from_str(a).unwrap(), usize::from_str(b).unwrap())
+        })
         .collect();
 
     a.sort_unstable();
